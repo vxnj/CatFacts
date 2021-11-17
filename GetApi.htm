@@ -22,22 +22,31 @@ function GetApi() {
 
 // Function that formats the string with HTML tags, then outputs the result
 function newFact(data) {
-    var output = data.text
-    document.getElementById("fact").innerHTML = output;
+    var output = data.text;
+    document.getElementById("str").innerHTML = output;
 }
 
 </script>
 
 <html>
 <head>
-<title>Cat Facts!! --VSC Edit</title>
+<title>Get Api</title>
 </head>
 <body>
 
-<!-- The output appears here -->
-<button type="button" onclick="cats()" >New Cat Fact!</button> 
+<form>
+    <label for="xkey">Key:</label>
+    <input type="text" id="xkey" name="xkey" value="https://cat-fact.herokuapp.com/facts/random"><br><br>
 
-<div id="fact"></div>
+    <label for="xurl">URL:</label>
+    <input type="text" id="xurl" name="xurl"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+<!-- The output appears here -->
+<button type="button" onclick="GetApi()" >MakeString!</button> 
+
+<div id="str"></div>
 
 </body>
 </html>
