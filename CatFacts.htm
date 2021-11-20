@@ -6,8 +6,7 @@ var xhr = new XMLHttpRequest();
 var url = "https://cat-fact.herokuapp.com/facts/random";
 
 // Called whenever the readyState attribute changes 
-xhr.onreadystatechange = function() {
-  // Check if fetch request is done
+xhr.onreadystatechange = function() { // Check if fetch request is done
   if (xhr.readyState == 4 && xhr.status == 200) { 
     var jsonData = JSON.parse(xhr.responseText);
     newFact(jsonData);
@@ -25,7 +24,6 @@ function newFact(data) {
     var output = data.text
     document.getElementById("fact").innerHTML = output;
 }
-// cats()
 
 </script>
 
@@ -39,6 +37,10 @@ function newFact(data) {
 <button type="button" onclick="cats()" >New Cat Fact!</button> 
 <br><br>
 <div id="fact"></div>
+
+<button type="button" onclick="timeConverter(1637408598)" >New TIme!</button> 
+<br><br>
+
 <br><br><br><br>
 <div id="timeout"></div>
 
@@ -56,7 +58,7 @@ function newFact(data) {
 <script>
 
 function timeConverter(UNIX_timestamp){
-  var a = new Date(1637408598 * 1000);
+  var a = new Date(UNIX_timestamp * 1000);
   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var year = a.getFullYear();
   var month = months[a.getMonth()];
