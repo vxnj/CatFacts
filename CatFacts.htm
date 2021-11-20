@@ -3,9 +3,9 @@
 <script>
   function timeConverter(UNIX_timestamp){
     var a = new Date(UNIX_timestamp * 1000);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','10','11','12'];
     var year = a.getFullYear();
-    var month = a.getMonth();
+    var month = months[a.getMonth()];
     var date = a.getDate();
     var hour = a.getHours();
     var min = a.getMinutes();
@@ -53,7 +53,7 @@ function newFact(data) {
 <br><br>
 <div id="fact"></div>
 
-<button type="button" onclick="timeConverter(1637408598)" >New Time!</button> 
+<button type="button" onclick="timeConverter(1637449728)" >New Time!</button> 
 <br><br>
 
 <br><br><br><br>
