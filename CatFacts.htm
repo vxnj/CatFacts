@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <script>
-
   function timeConverter(UNIX_timestamp){
     var a = new Date(UNIX_timestamp * 1000);
     var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -12,11 +11,10 @@
     var min = a.getMinutes();
     var sec = a.getSeconds();
     var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-    return time;
     document.getElementById("timeout").innerHTML = time;
   
   }</script>
-  
+
 <script>
 // Store XMLHttpRequest and the JSON file location in variables
 var xhr = new XMLHttpRequest();
