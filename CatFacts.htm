@@ -12,6 +12,14 @@
     var sec = a.getSeconds();
     var time = year + '-' + month + '-' + date + ' ' + hour + ':' + min + ':' + sec ;
     document.getElementById("timeout").innerHTML = time;
+
+    let timek = new Date();
+let cDay = currentDate.getDate()
+let cMonth = currentDate.getMonth() + 1
+let cYear = currentDate.getFullYear()
+
+
+    document.getElementById("timeout").innerHTML = timek;
   
   }</script>
 
@@ -55,6 +63,7 @@ function newFact(data) {
 
 <button type="button" onclick="timeConverter(1637449728)" >New Time!</button> 
 <br><br>
+
 
 <br><br><br><br>
 <div id="timeout"></div>
