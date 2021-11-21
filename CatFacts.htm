@@ -2,13 +2,16 @@
 <html>
 <head>
   
-<script src="../funcs.js"></script>
+<script src="funcs.js"></script>
 
 <script>
 function show(){
   alert('Welcome to W3Docs!');
   result = prompt('fhed', '123');
-  alert(result);
+ // alert(result);
+  var ans = validate(result);
+  document.getElementById("timeout").innerHTML = ans;
+  
 }
 
   function timeConverter(UNIX_timestamp){
@@ -73,6 +76,7 @@ function newFact(data) {
 
 <br><br><br><br>
 <div id="timeout"></div>
+<div id="ans"></div>
 
 <a href="https://vxnj.github.io/CatFacts/CatFacts.htm">Cat Facts page<a/>
 <br>
