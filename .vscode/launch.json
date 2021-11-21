@@ -1,7 +1,4 @@
 {
-    "configurations": [
-        {
-            "version": "0.2.0",
             "configurations": [
                 {
                     "name": "Launch CatFacts.htm",
@@ -12,5 +9,4 @@
                 }
             ]
         }
-    ]
-}
+    
