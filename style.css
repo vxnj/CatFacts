@@ -1,3 +1,5 @@
 div {color: red !important; 
     font-family: 'Courier New', Courier, monospace;
     font-size:large;}
+
+    [id="timeout"] { color: blue !important;}
