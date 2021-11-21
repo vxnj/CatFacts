@@ -1,7 +1,8 @@
-let site = {
-    name: "W3Docs",
-  };
-  site.welcome = function () {
-    console.log("Welcome to W3Docs!");
-  };
-  site.welcome(); // Welcome to W3Docs!
+function validate(age){
+    var ans="not eigible";
+    if(age>=18){
+        ans="eligible";
+    }
+    return(ans);
+    alert("Hello World")
+}
