@@ -2,15 +2,18 @@
 <html>
 <head>
   
-<script src="funcs.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" media=”screen” />
+  
+  <script src="funcs.js"></script>
+
 
 <script>
 function show(){
-  alert('Welcome to W3Docs!');
+  //alert('Welcome to W3Docs!');
   result = prompt('fhed', '123');
  // alert(result);
   var ans = validate(result);
-  document.getElementById("timeout").innerHTML = ans;
+  document.getElementById("ans").innerHTML = ans;
   
 }
 
