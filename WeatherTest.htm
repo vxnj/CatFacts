@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <script src="funcs.js"></script>
+
+
+<script>
+function show(){
+  //alert('Welcome to W3Docs!');
+  result = prompt('fhed', '123');
+ // alert(result);
+  var ans = validate(result);
+  document.getElementById("ans").innerHTML = ans;
+  
+}
+
+  function timeConverter(UNIX_timestamp){
+//    var a = new Date(UNIX_timestamp * 1000);
+    var a = new Date()
+    var months = ['01','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','10','11','12'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = year + '-' + month + '-' + date + ' ' + hour + ':' + min + ':' + sec ;
+    // alert('Welcome to W3Docs!'); 
+    document.getElementById("timeout").innerHTML = time;
+  
+  }</script>
+
+<script>
+// Store XMLHttpRequest and the JSON file location in variables
+var xhr = new XMLHttpRequest();
+var url = "https://api.openweathermap.org/data/2.5/onecall?lat=40.7992&lon=-73.972&units=imperial&exclude=minutely&appid=3eaa5145be3fbca4b9a3f346b0f8a668";
+
+// Called whenever the readyState attribute changes 
+xhr.onreadystatechange = function() { // Check if fetch request is done
+  if (xhr.readyState == 4 && xhr.status == 200) { 
+    var jsonData = JSON.parse(xhr.responseText);
+    newFact(jsonData);
+  }
+};
+
+// Do the HTTP call using the url variable we specified above
+function wea() {
+  xhr.open("GET", url, true);
+  xhr.send();
+}
+
+// Function that formats the string with HTML tags, then outputs the result
+function newFact(data) {
+    var output = data.current.temp
+    document.getElementById("wh").innerHTML = "Current Temp: " + output;
+ }
+
+</script>
+
+
+<title>weather</title>
+</head>
+<body>
+
+
+<button type="button" onclick="wea()" >Weather</button> 
+<br><br>
+
+
+<br><br><br><br>
+<div id="timeout"></div>
+<div id="ans"></div>
+<div id="wh"></div>
+
+<a href="https://api.openweathermap.org/data/2.5/onecall?lat=40.7992&lon=-73.972&exclude=minutely&appid=3eaa5145be3fbca4b9a3f346b0f8a668"
+target="blank">open weather map<a/>
+
+</body>
+</html>
