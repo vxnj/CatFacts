@@ -8,6 +8,7 @@
 
 
 <script>
+
 function show(){
   //alert('Welcome to W3Docs!');
   result = prompt('fhed', '123');
@@ -36,7 +37,7 @@ function show(){
 <script>
 // Store XMLHttpRequest and the JSON file location in variables
 var xhr = new XMLHttpRequest();
-var url = "https://api.openweathermap.org/data/2.5/onecall?lat=40.7992&lon=-73.972&units=imperial&exclude=minutely&appid=3eaa5145be3fbca4b9a3f346b0f8a668";
+var url = "https://api.openweathermap.org/data/2.5/onecall?lat=40.8&lon=-73.97&units=imperial&exclude=minutely&appid=3eaa5145be3fbca4b9a3f346b0f8a668";
 
 // Called whenever the readyState attribute changes 
 xhr.onreadystatechange = function() { // Check if fetch request is done
@@ -57,7 +58,6 @@ function newFact(data) {
     var output = data.current.temp
     document.getElementById("wh").innerHTML = "Current Temp: " + output;
  }
-
 </script>
 
 
@@ -66,17 +66,28 @@ function newFact(data) {
 <body>
 
 
+  
 <button type="button" onclick="wea()" >Weather</button> 
 <br><br>
 
 
+
 <br><br><br><br>
-<div id="timeout"></div>
+<div id="demo"></div>
 <div id="ans"></div>
 <div id="wh"></div>
 
 <a href="https://api.openweathermap.org/data/2.5/onecall?lat=40.7992&lon=-73.972&exclude=minutely&appid=3eaa5145be3fbca4b9a3f346b0f8a668"
 target="blank">open weather map<a/>
+
+<script> 
+  const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+  let text = "";
+  for (let i = 0; i < cars.length; i++) {
+    text += cars[i] + "<br>";
+  
+    document.getElementById("demo").innerHTML = text;
+</script>
 
 </body>
 </html>
