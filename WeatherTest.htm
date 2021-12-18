@@ -32,8 +32,8 @@ function newFact(data) {
     
     let txt = "";
     for (let i = 0; i < 47; i++) {
-    txt += i + ":  " + parseInt(.5 + data.hourly[i].temp) + "⁰ | "
-                 // + data.hourly[i].temp + "⁰ | "
+    txt += i + ":  " + data.hourly[i].temp + "*F | "
+                 //  + parseInt(.5 + data.hourly[i].temp) + "⁰ | "
                    + data.hourly[i].humidity + "% |" 
                    + data.hourly[i].weather[0].main + "<br>";
     
