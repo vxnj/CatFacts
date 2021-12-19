@@ -7,3 +7,8 @@ function validate(age){
     return(ans);
 
 }
+
+function hhmm(UNIX_timestamp){
+    var a = Date(UNIX_timestamp * 1000);
+    return(a.getHours() + ":" + a.getMinutes());
+}

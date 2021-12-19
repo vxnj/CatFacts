@@ -1,5 +1,10 @@
+
+body { background-color: black !important;
+        padding: 10px !important;}
+
+
 div {color: rgb(54, 168, 92) !important; 
     font-family: 'Courier New', Courier, monospace;
     font-size:large;}
 
-    [id="timeout"] { color: blue !important;}
+[id="timeout"] { color: blue !important;}

@@ -2,7 +2,6 @@
 <html>
 <head>
 
-
 <link rel="stylesheet" href="style.css" />
 <script src="funcs.js"></script>
 
@@ -37,8 +36,13 @@ function newFact(data) {
     
     let txt = "";
     for (let i = 0; i < 47; i++) {
-    txt += i + ":  " + data.hourly[i].temp + "*F | "
-                 //  + parseInt(.5 + data.hourly[i].temp) + "⁰ | "
+      
+      alert (Date(data.hourly[i].dt * 1000));
+ 
+      txt += i + ":  " 
+                   // + data.hourly[i].temp + "*F | "
+                   //+ hhmm(data.hourly[i].dt) + " | "
+                   + parseInt(.5 + data.hourly[i].temp) + "⁰ | "
                    + data.hourly[i].humidity + "% | " 
                    + data.hourly[i].weather[0].main + "<br>";
     
@@ -58,12 +62,12 @@ window.onload = wea;
 </head>
 <body>
 
-<button type="button" onclick="wea()" >Weather</button> 
+<button type="button" class="btn btn-success" onclick="wea()" >Weather</button> 
 <br><br>
 
 
 
-<br><br><br><br>
+<br><br>
 <div id="demo"></div>
 <div id="wh"></div>
 
