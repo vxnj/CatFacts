@@ -1,6 +1,6 @@
 
 :root {
-    --txt9:		#6ed37a;
+    --txt9:		#7a9fee;
 }
 
 body { background-color: black !important;
@@ -11,7 +11,7 @@ div {color: var(--txt9) !important;
     font-family: 'Courier New', Courier, monospace;
     font-size:large;}
 
-table {border-color: rgba(81, 163, 99, 0.562) !important;
+table {border-color: rgba(81, 107, 163, 0.562) !important;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: var(--txt9) !important;
     }
