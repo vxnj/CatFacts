@@ -32,25 +32,32 @@ function wea() {
 
 // Function that formats the string with HTML tags, then outputs the result
 function newFact(data) {
-    var output = data.hourly[0].temp
+    //var output = data.hourly[0].temp
     
     let txt = "";
-    for (let i = 0; i < 47; i++) {
+    for (let i = 0; i < 10; i++) {
       
-      alert (Date(data.hourly[i].dt * 1000));
- 
-      txt += i + ":  " 
-                   // + data.hourly[i].temp + "*F | "
-                   //+ hhmm(data.hourly[i].dt) + " | "
+      var xd = new Date(data.hourly[i].dt*1000);
+      xd2 = xd.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+      
+      txt +=   "0" + xd.toLocaleString('en-US', { hour: 'numeric', hour12: true }) + " | "
                    + parseInt(.5 + data.hourly[i].temp) + "⁰ | "
                    + data.hourly[i].humidity + "% | " 
                    + data.hourly[i].weather[0].main + "<br>";
-    
+                   //console.log (xd2)
+
+      tblhr += "<tr>" 
+            + "  <th>" + xd.toLocaleString('en-US', { hour: 'numeric', hour12: true }) + "</th>"
+            + "  <th>" + parseInt(.5 + data.hourly[i].temp) + "</th>"
+            + "  <th>Email</th>"
+            + "</tr>"
    }
  
-   document.getElementById("wh").innerHTML = "Current Temp: " + data.current.temp;
+   
+
+   document.getElementById("demo").innerHTML = "Current Temp: " + data.current.temp;
    document.getElementById("wh").innerHTML = txt;
- 
+  
  }
 
 window.onload = wea;
@@ -62,7 +69,7 @@ window.onload = wea;
 </head>
 <body>
 
-<button type="button" class="btn btn-success" onclick="wea()" >Weather</button> 
+<button type="button" class="btn btn-success" onclick="wea()" >Refresh</button> 
 <br><br>
 
 
@@ -70,6 +77,36 @@ window.onload = wea;
 <br><br>
 <div id="demo"></div>
 <div id="wh"></div>
+
+<div id="tblhr"></div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John</td>
+      <td>Doe</td>
+      <td>john@example.com</td>
+    </tr>
+    <tr>
+      <td>Mary</td>
+      <td>Moe</td>
+      <td>mary@example.com</td>
+    </tr>
+    <tr>
+      <td>July</td>
+      <td>Dooley</td>
+      <td>july@example.com</td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 <a href="https://api.openweathermap.org/data/2.5/onecall?lat=40.7992&lon=-73.972&exclude=minutely&appid=3eaa5145be3fbca4b9a3f346b0f8a668"
