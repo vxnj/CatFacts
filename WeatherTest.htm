@@ -61,7 +61,7 @@ function newFact(data) {
 
       tblhr += "<tr>" 
             + "  <td>" + xd.toLocaleString('en-US', { hour: 'numeric', hour12: true }) + "</td>"
-            + "  <td>" + parseInt(.5 + data.hourly[i].temp) + "</td>"
+            + "  <td>" + parseInt(.5 + data.hourly[i].temp) + "°</td>"
             + "  <td>" + data.hourly[i].humidity + "%" + "</td>"
             + "  <td>" + data.hourly[i].weather[0].main + "</td>"
             + "</tr>";
