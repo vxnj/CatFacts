@@ -13,9 +13,10 @@ div {color: var(--txt9) !important;
 
 table {border-color: rgba(81, 107, 163, 0.562) !important;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: smaller !important;
         color: var(--txt9) !important;
     }
+
+/* td {margin: 0px; padding: 0px;} */
 
 .hl {color: rgb(62, 207, 140) !important;}
 
