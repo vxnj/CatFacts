@@ -10,7 +10,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
-
 <script>
 // Store XMLHttpRequest and the JSON file location in variables
 var xhr = new XMLHttpRequest();
@@ -20,7 +19,7 @@ var url = "https://api.openweathermap.org/data/2.5/onecall?lat=40.8&lon=-73.97&u
 xhr.onreadystatechange = function() { // Check if fetch request is done
   if (xhr.readyState == 4 && xhr.status == 200) { 
     var jsonData = JSON.parse(xhr.responseText);
-    newFact(jsonData);
+    getWea(jsonData);
   }
 };
 
@@ -38,39 +37,35 @@ var tblhr = '<table class="table"><thead><tr>'
     +'</tr></thead>';
 
 // Function that formats the string with HTML tags, then outputs the result
-function newFact(data) {
+function getWea(data) {
 
       tblhr += "<tr>" 
             + "  <td>" + "Now" + "</td>"
             + '  <td class="hl"><b>' + parseInt(.5 + data.current.temp) + "°</b></td>"
             + "  <td>" + data.current.humidity + "%" + "</td>"
-            + "  <td>" + data.current.weather[0].main + "</td>"
+           // + "  <td>" + data.current.weather[0].main + "</td>"
+            + "  <td>" + '<img src="http://openweathermap.org/img/wn/' + data.current.weather[0].icon + '@2x.png" style="width:32px;height:32px;">' + "</td>"
             + "</tr>";
  
     
     let txt = "";
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 24; i++) {
       
       var xd = new Date(data.hourly[i].dt*1000);
+      xicon = '<img src="http://openweathermap.org/img/wn/' + data.hourly[i].weather[0].icon + "@2x.png>";
+      console.log(xicon)
       xd2 = xd.toLocaleString('en-US', { hour: 'numeric', hour12: true });
       
-      txt +=   "0" + xd.toLocaleString('en-US', { hour: 'numeric', hour12: true }) + " | "
-                   + parseInt(.5 + data.hourly[i].temp) + "⁰ | "
-                   + data.hourly[i].humidity + "% | " 
-                   + data.hourly[i].weather[0].main + "<br>";
-
       tblhr += "<tr>" 
             + "  <td>" + xd.toLocaleString('en-US', { hour: 'numeric', hour12: true }) + "</td>"
             + "  <td>" + parseInt(.5 + data.hourly[i].temp) + "°</td>"
             + "  <td>" + data.hourly[i].humidity + "%" + "</td>"
-            + "  <td>" + data.hourly[i].weather[0].main + "</td>"
+            + "  <td>" + '<img src="http://openweathermap.org/img/wn/' + data.hourly[i].weather[0].icon + '@2x.png" style="width:32px;height:32px;">' + "</td>"
             + "</tr>";
    }
  
    tblhr += "</tbody></table>";
 
-   //document.getElementById("demo").innerHTML = "Current Temp: " + data.current.temp;
-   // document.getElementById("wh").innerHTML = txt;
    document.getElementById("tblhr").innerHTML = tblhr;
   
  }
@@ -85,18 +80,18 @@ window.onload = wea;
 
 <button style="display:none" type="button" class="btn btn-success" onclick="wea()" >Refresh</button>
 
-
 <br>
-<div id="demo"></div>
-<div id="wh"></div>
+
+<img src="http://openweathermap.org/img/wn/10d@2x.png" style="width:48px;height:48px;">
+
+
 
 <div id="tblhr"></div>
 
+<a href="https://api.openweathermap.org/data/2.5/onecall?lat=40.8&lon=-73.97&units=imperial&exclude=minutely&appid=3eaa5145be3fbca4b9a3f346b0f8a668"
+target="blank">json<a/>
 
-<a href="https://api.openweathermap.org/data/2.5/onecall?lat=40.7992&lon=-73.972&exclude=minutely&appid=3eaa5145be3fbca4b9a3f346b0f8a668"
-target="blank">open weather map<a/>
-
-<a href="https://vxnj.github.io/CatFacts/WeatherTest.htm" target="blank">github<a/>
+<a href="https://vxnj.github.io/CatFacts/WeatherTest.htm"">github<a/>
 <a href="https://duckduckgo.com/?q=weather+upper+west+side%2C+Ny&t=ffsb&atb=v229-1&ia=weather" target="blank">ddg weather<a/>
 
 </body>
