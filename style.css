@@ -1,10 +1,19 @@
 
+:root {
+    --txt9:		#6ed37a;
+}
+
 body { background-color: black !important;
         padding: 10px !important;}
 
 
-div, table {color: rgb(54, 168, 92) !important; 
+
+div {color: var(--txt9) !important; 
     font-family: 'Courier New', Courier, monospace;
     font-size:large;}
 
+table {border-color: var(--txt9) !important;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--txt9) !important;
+    }
 [id="timeout"] { color: blue !important;}

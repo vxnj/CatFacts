@@ -39,7 +39,14 @@ var tblhr = '<table class="table"><thead><tr>'
 
 // Function that formats the string with HTML tags, then outputs the result
 function newFact(data) {
-    //var output = data.hourly[0].temp
+
+      tblhr += "<tr>" 
+            + "  <td>" + "Now" + "</td>"
+            + "  <td>" + parseInt(.5 + data.current.temp) + "</td>"
+            + "  <td>" + data.current.humidity + "%" + "</td>"
+            + "  <td>" + data.current.weather[0].main + "</td>"
+            + "</tr>";
+ 
     
     let txt = "";
     for (let i = 1; i < 10; i++) {
@@ -62,7 +69,7 @@ function newFact(data) {
  
    tblhr += "</tbody></table>";
 
-   document.getElementById("demo").innerHTML = "Current Temp: " + data.current.temp;
+   //document.getElementById("demo").innerHTML = "Current Temp: " + data.current.temp;
    // document.getElementById("wh").innerHTML = txt;
    document.getElementById("tblhr").innerHTML = tblhr;
   
