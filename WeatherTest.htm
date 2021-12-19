@@ -42,7 +42,7 @@ function newFact(data) {
 
       tblhr += "<tr>" 
             + "  <td>" + "Now" + "</td>"
-            + "  <td>" + parseInt(.5 + data.current.temp) + "</td>"
+            + '  <td class="hl"><b>' + parseInt(.5 + data.current.temp) + "°</b></td>"
             + "  <td>" + data.current.humidity + "%" + "</td>"
             + "  <td>" + data.current.weather[0].main + "</td>"
             + "</tr>";
