@@ -3,7 +3,7 @@ body { background-color: black !important;
         padding: 10px !important;}
 
 
-div {color: rgb(54, 168, 92) !important; 
+div, table {color: rgb(54, 168, 92) !important; 
     font-family: 'Courier New', Courier, monospace;
     font-size:large;}
 
