@@ -8,7 +8,6 @@ body { background-color: black !important;
     padding: 10px !important;}
 
 
-
 div {color: var(--txt9) ; 
     font-family: 'Courier New', Courier, monospace;
     font-size:large;}
@@ -28,7 +27,7 @@ img.weaicon { height: 32px !important; width: 32px !important; opacity: 70% !imp
 a    { color: rgba(113, 113, 207, 0.692) !important;}    
 
 .dark-mode {
-    background-color: rgb(235, 181, 214) !important;
+    background-color: rgb(219, 146, 191) !important;
     color: var(--txtP) !important;
     border-color: var(--txtP) !important;
   }
