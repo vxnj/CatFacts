@@ -8,16 +8,15 @@ body { background-color: black !important;
 
 
 div {color: var(--txt9) !important; 
-    font-family: 'Segoe UI', Courier, monospace;
-    font-size:large;}
+    font-family: 'Consolas', Courier, monospace;
+    }
 
 table {border-color: rgba(81, 107, 163, 0.562) !important;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: smaller !important; 
         color: var(--txt9) !important;
     }
 
-/* td {margin: 0px; padding: 0px;} */
+td {margin: 0px; padding: 0px;}
 
 img.weaicon { height: 32px !important; width: 32px !important; opacity: 70% !important;}
 

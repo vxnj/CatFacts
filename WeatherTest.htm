@@ -41,7 +41,7 @@ tblhr+= '<table class="table"><thead><tr>'
 function getWea(data) {
       
       dateVal = new Date(data.current.dt *1000);
-      dtnow = date_format(dateVal, 'g:i:s');
+      dtnow = date_format(dateVal, 'g:i');
 
       tblhr += "<tr>" 
             + "  <td>" + dtnow + "</td>"
