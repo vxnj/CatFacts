@@ -51,7 +51,7 @@
       Y: function () { return this.getFullYear() },
       y: function () { return ('' + this.getFullYear()).substr(2) },
       // Time
-      a: function () { return this.getHours() < 12 ? 'am' : 'pm' },
+      a: function () { return this.getHours() < 12 ? 'a' : 'p' },
       A: function () { return this.getHours() < 12 ? 'AM' : 'PM' },
       B: function () { return Math.floor((((this.getUTCHours() + 1) % 24) + this.getUTCMinutes() / 60 + this.getUTCSeconds() / 3600) * 1000 / 24) },
       g: function () { return this.getHours() % 12 || 12 },
