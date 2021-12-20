@@ -1,3 +1,6 @@
+ <link rel="stylesheet" href="style.css" />
+
+
 Hey There
 
 <br><a href="zzArchive/CatFacts.htm">Cat Facts<a/>
