@@ -1,7 +1,7 @@
 
 :root {
     --txt9:		#7a9fee;
-    --txtP:		#7a9frgb(167, 12, 167);
+    --txtP:		rgb(134, 10, 134);
 }
 
 body { background-color: black !important;
@@ -16,6 +16,7 @@ div {color: var(--txt9) ;
 table {border-color: rgba(81, 107, 163, 0.562) !important;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: var(--txt9) !important;
+        margin-top: 10px !important;
     }
 
 /* td {margin: 0px; padding: 0px;} */
@@ -28,5 +29,6 @@ a    { color: rgba(113, 113, 207, 0.692) !important;}
 
 .dark-mode {
     background-color: rgb(235, 181, 214) !important;
-    color: rgb(107, 22, 107) !important;
+    color: var(--txtP) !important;
+    border-color: var(--txtP) !important;
   }

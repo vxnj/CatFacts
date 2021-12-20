@@ -30,7 +30,7 @@ function wea() {
 }
 
 var tblhr ="";
-tblhr+= '<table class="table"><thead><tr>'
+tblhr+= '<table class="table" id="mytbl"><thead><tr>'
       + '<th onclick="fdrk()">Time</th>'
       + '<th>Temp</th>'
       + '<th>Humid</th>'
@@ -83,8 +83,6 @@ function getWea(data) {
    document.getElementById("moon").innerHTML = '<img src="svg/ClearNt.svg" alt="Moon" class="weaicon"/>' + " " + mrise  + "-" + mset;
  }
 
-
-
 // window.setInterval('wea()', 10000); 	
 window.onload = wea;
 
@@ -92,6 +90,9 @@ function fdrk() {
   var element = document.body;
    element.classList.toggle("dark-mode");
 
+   element = document.getElementById("mytbl");
+   element.classList.toggle("dark-mode");
+  
 }
 
 </script>
