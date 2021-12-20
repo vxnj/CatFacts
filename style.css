@@ -4,16 +4,16 @@
 }
 
 body { background-color: black !important;
-        padding: 10px !important;}
+     padding: 10px !important;}
 
 
 div {color: var(--txt9) !important; 
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Segoe UI', Courier, monospace;
     font-size:large;}
 
 table {border-color: rgba(81, 107, 163, 0.562) !important;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        /* font-size: smaller !important; */
+        font-size: smaller !important; 
         color: var(--txt9) !important;
     }
 
