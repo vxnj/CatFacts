@@ -83,16 +83,14 @@ function getWea(data) {
    document.getElementById("moon").innerHTML = '<img src="svg/ClearNt.svg" alt="Moon" class="weaicon"/>' + " " + mrise  + "-" + mset;
  }
 
-// window.setInterval('wea()', 10000); 	
+// window.setInterval('fdrk()', 4000); 	
 window.onload = wea;
 
 function fdrk() {
   var element = document.body;
    element.classList.toggle("dark-mode");
-
    element = document.getElementById("mytbl");
-   element.classList.toggle("dark-mode");
-  
+   element.classList.toggle("dark-mode"); 
 }
 
 </script>
@@ -100,7 +98,6 @@ function fdrk() {
 <title>weather</title>
 </head>
 <body>
-
 
 <div id="tblhr"></div>
 <div id="sun"></div>
