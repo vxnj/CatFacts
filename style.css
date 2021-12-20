@@ -1,22 +1,24 @@
 
 :root {
     --txt9:		#7a9fee;
+    --txtP:		#7a9frgb(167, 12, 167);
 }
 
 body { background-color: black !important;
-     padding: 10px !important;}
+    padding: 10px !important;}
 
 
-div {color: var(--txt9) !important; 
-    font-family: 'Consolas', Courier, monospace;
-    }
+
+div {color: var(--txt9) ; 
+    font-family: 'Courier New', Courier, monospace;
+    font-size:large;}
 
 table {border-color: rgba(81, 107, 163, 0.562) !important;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: var(--txt9) !important;
     }
 
-td {margin: 0px; padding: 0px;}
+/* td {margin: 0px; padding: 0px;} */
 
 img.weaicon { height: 32px !important; width: 32px !important; opacity: 70% !important;}
 
@@ -24,3 +26,7 @@ img.weaicon { height: 32px !important; width: 32px !important; opacity: 70% !imp
 
 a    { color: rgba(113, 113, 207, 0.692) !important;}    
 
+.dark-mode {
+    background-color: rgb(235, 181, 214) !important;
+    color: rgb(107, 22, 107) !important;
+  }
