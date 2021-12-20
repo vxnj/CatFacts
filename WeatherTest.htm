@@ -4,6 +4,7 @@
 
 <link rel="stylesheet" href="style.css" />
 <script src="funcs.js"></script>
+<script src="fDate.js"></script>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +47,6 @@ function getWea(data) {
             + "  <td>" + data.current.weather[0].main + "</td>"
            // + "  <td>" + '<img src="http://openweathermap.org/img/wn/' + data.current.weather[0].icon + '@2x.png" style="width:32px;height:32px;">' + "</td>"
             + "</tr>";
- 
     
     let txt = "";
     for (let i = 1; i < 10; i++) {
@@ -67,8 +67,18 @@ function getWea(data) {
  
    tblhr += "</tbody></table>";
 
+
+   var dateVal = new Date(data.current.sunrise *1000);
+   rise = date_format(dateVal, 'h:ia');
+   dateVal = new Date(data.current.sunset  *1000);
+   set =  date_format(dateVal, 'h:ia');
+
+  console.log(rise)
+
    document.getElementById("tblhr").innerHTML = tblhr;
-  
+   document.getElementById("sun").innerHTML = rise + " | " + set
+
+
  }
 
 window.onload = wea;
@@ -79,7 +89,6 @@ window.onload = wea;
 </head>
 <body>
 
-<button style="display:none" type="button" class="btn btn-success" onclick="wea()" >Refresh</button>
 
 <br>
 
@@ -87,15 +96,14 @@ window.onload = wea;
 
 
 <div id="tblhr"></div>
+<div id="sun"></div>
 
 <a href="https://api.openweathermap.org/data/2.5/onecall?lat=40.8&lon=-73.97&units=imperial&exclude=minutely&appid=3eaa5145be3fbca4b9a3f346b0f8a668"
 target="blank">json<a/>
 
 <a href="https://vxnj.github.io/CatFacts/WeatherTest.htm"">github<a/>
 <a href="https://duckduckgo.com/?q=weather+upper+west+side%2C+Ny&t=ffsb&atb=v229-1&ia=weather" target="blank">ddg weather<a/>
+<a href="https://openweathermap.org/city/5128581">open wea<a/>
 
-  <a href="https://openweathermap.org/city/5128581">open wea<a/>
-
-  
 </body>
 </html>
