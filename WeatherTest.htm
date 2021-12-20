@@ -32,7 +32,7 @@ function wea() {
   xhr.send();
 }
 
-var tblhr = '<table class="table"><thead><tr>'
+var tblhr = '<table class="table table-dark table-hover"><thead><tr>'
       + '<th>Time</th>'
       + '<th>Temp</th>'
       + '<th>Humid</th>'
@@ -84,7 +84,6 @@ function getWea(data) {
    document.getElementById("tblhr").innerHTML = tblhr;
    document.getElementById("sun" ).innerHTML = '<img src="svg/Clear.svg" alt="Sun" class="weaicon"/>' + sun  ;
    document.getElementById("moon").innerHTML = '<img src="svg/ClearNt.svg" alt="Moon" class="weaicon"/>' + " " + mrise  + "-" + mset;
-
  }
 
 window.onload = wea;
