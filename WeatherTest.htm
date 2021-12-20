@@ -2,7 +2,9 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- <link rel="" href="Clear.svg"/> -->
+
 <script src="funcs.js"></script>
 <script src="fDate.js"></script>
 
@@ -67,15 +69,25 @@ function getWea(data) {
  
    tblhr += "</tbody></table>";
 
-   var dateVal = new Date(data.current.sunrise *1000);
+   var dateVal = new Date(data.daily[0].sunrise *1000);
    rise = date_format(dateVal, 'h:ia');
-   dateVal = new Date(data.current.sunset  *1000);
+   dateVal = new Date(data.daily[0].sunset   *1000);
    set =  date_format(dateVal, 'h:ia');
 
+   dateVal = new Date(data.daily[0].moonrise *1000);
+   mrise =  date_format(dateVal, 'h:ia');
+   dateVal = new Date(data.daily[0].moonset  *1000);
+   mset =  date_format(dateVal, 'h:ia');
+
+   var sun = " " + rise  + "-" + set;
+
    document.getElementById("tblhr").innerHTML = tblhr;
-   document.getElementById("sun" ).innerHTML = "Daytime " + rise  + " - " + set
+   document.getElementById("sun" ).innerHTML = '<img src="svg/Clear.svg" alt="Sun" class="weaicon"/>' + sun  ;
+   document.getElementById("moon").innerHTML = '<img src="svg/ClearNt.svg" alt="Moon" class="weaicon"/>' + " " + mrise  + "-" + mset;
 
  }
+
+
 
 window.onload = wea;
 
@@ -86,16 +98,17 @@ window.onload = wea;
 <body>
 
 <br>
-
 <div id="tblhr"></div>
 <div id="sun"></div>
+<div id="moon"></div>
+
 
 
 <a href="https://api.openweathermap.org/data/2.5/onecall?lat=40.8&lon=-73.97&units=imperial&exclude=minutely&appid=3eaa5145be3fbca4b9a3f346b0f8a668"
 target="blank">json<a/>
 <a href="https://vxnj.github.io/CatFacts/WeatherTest.htm"">github<a/>
-<a href="https://duckduckgo.com/?q=weather+upper+west+side%2C+Ny&t=ffsb&atb=v229-1&ia=weather" target="blank">ddg weather<a/>
-<a href="https://openweathermap.org/city/5128581">open wea<a/>
+<a href="https://duckduckgo.com/?q=weather+upper+west+side%2C+Ny&t=ffsb&atb=v229-1&ia=weather" target="blank">ddg<a/>
+<a href="https://openweathermap.org/city/5128581">openweather<a/>
 
 </body>
 </html>
