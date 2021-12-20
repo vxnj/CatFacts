@@ -16,3 +16,8 @@ function hhmm(dt){
     return(time);
 
 }
+
+function gup (name) {
+    name = RegExp ('[?&]' + name.replace (/([[\]])/, '\\$1') + '=([^&#]*)');
+    return (window.location.href.match (name) || ['', ''])[1];
+}
