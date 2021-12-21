@@ -92,11 +92,11 @@ function getWea(data) {
             + "</tr>";
       }
  
-      for (let j = 1; j < 6; j++) {
+      for (let j = 1; j < 7; j++) {
       var xd = new Date(data.daily[j].dt*1000);
       dthr = date_format(xd, 'D');
-      tblhr += "<tr>" 
-            + "  <td id='dayrow'>" + dthr + "</td>"
+      tblhr += "<tr class='dayrow'>" 
+            + "  <td>" + dthr + "</td>"
             + "  <td>" + parseInt(.5 + data.daily[j].temp.max)+ "-" +parseInt(.5 + data.daily[j].temp.min) + "°</td>"
             + "  <td>" + data.daily[j].humidity + "%" + "</td>"
             + "  <td>" + data.daily[j].weather[0].main + "</td>"

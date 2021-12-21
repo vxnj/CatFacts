@@ -2,11 +2,12 @@
 :root {
     --txt9:		#7a9fee;
     --txtP:		rgb(134, 10, 134);
+    --txtD:		#4292fa;
 }
 
 body { background-color: black !important;
     padding: 10px !important;
-    line-height: 1 !important;}
+    line-height: .9 !important;}
 
 div {color: var(--txt9) ; 
     font-family: 'Segoe UI', Courier, monospace; 
@@ -32,3 +33,7 @@ a    { color: rgba(113, 113, 207, 0.692) !important;}
     color: var(--txtP) !important;
     border-color: var(--txtP) !important;
   }
+
+.dayrow {color: var(--txtD) !important;}
+
+.dayrow .dark-mode {background-color: rgb(219, 146, 191) !important;}
