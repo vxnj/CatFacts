@@ -16,7 +16,8 @@
 key = "da5f0d9ce3486ef93fd7ffb24235c9e3"
 var xhr = new XMLHttpRequest();
 var xhrz = new XMLHttpRequest();
-paramzip = "10024"
+paramzip = "10025";
+var tblhr ="";
 
 // Called whenever the readyState attribute changes 
 xhr.onreadystatechange = function() { // Check if fetch request is done
@@ -34,9 +35,7 @@ xhrz.onreadystatechange = function() { // Check if fetch request is done
 
 function init() {
     paramzip = gup("zip") || "10025";
-    if (paramzip == null) {paramzip = '10023'}
-    document.getElementById("zipcd").innerHTML = paramzip;
-    document.getElementById("tblhr").innerHTML = tblhr;
+    // document.getElementById("tblhr").innerHTML = tblhr;
     console.log("init run"); 
     callzip();
 }
@@ -61,8 +60,8 @@ function callwea() {
   xhr.send();
 }
 
-var tblhr ="";
-tblhr+= '<table class="table" id="mytbl"><thead><tr>'
+
+tblhd= '<table class="table" id="mytbl"><thead><tr>'
       + '<th onclick="fdrk()">Time</th>'
       + '<th>Temp</th>'
       + '<th>Humidity</th>'
@@ -73,7 +72,7 @@ tblhr+= '<table class="table" id="mytbl"><thead><tr>'
 function getWea(data) {  
       dateVal = new Date(data.current.dt *1000);
       dtnow = date_format(dateVal, 'g:i');
-
+      tblhr = ""
       tblhr += "<tr>" 
             + "  <td>" + dtnow + "</td>"
             + '  <td class="hl"><b>' + parseInt(.5 + data.current.temp) + "°</b></td>"
@@ -88,7 +87,6 @@ function getWea(data) {
       dthr = date_format(xd, 'g a');
       xicon = '<img src="http://openweathermap.org/img/wn/' + data.hourly[i].weather[0].icon + "@2x.png>";      
       tblhr += "<tr>" 
-            // + "  <td>" + xd.toLocaleString('en-US', { hour: 'numeric', hour12: true }) + "</td>"
             + "  <td>" + dthr + "m</td>"
             + "  <td>" + parseInt(.5 + data.hourly[i].temp) + "°</td>"
             + "  <td>" + data.hourly[i].humidity + "%" + "</td>"
@@ -109,8 +107,10 @@ function getWea(data) {
    mrise =  date_format(dateVal, 'g:ia');
    dateVal = new Date(data.daily[0].moonset  *1000);
    mset =  date_format(dateVal, 'g:ia');
-
-   document.getElementById("tblhr").innerHTML = tblhr;
+   
+   document.getElementById("tblhr").innerHTML = "";
+   document.getElementById("tblhr").innerHTML = tblhd + tblhr;   
+   
    document.getElementById("sun" ).innerHTML = '<img src="svg/Clear.svg" alt="Sun" class="weaicon"/>' + " " + srise  + "-" + sset;
    document.getElementById("moon").innerHTML = '<img src="svg/ClearNt.svg" alt="Moon" class="weaicon"/>' + " " + mrise  + "-" + mset;
  }
@@ -127,6 +127,10 @@ function fdrk() {
    element.classList.toggle("dark-mode"); 
 }
 
+function chgzip() {
+  paramzip = prompt('Zip Code', paramzip || "10025");
+  callzip();
+}
 
 </script>
 
@@ -134,7 +138,7 @@ function fdrk() {
 </head>
 <body>
 
-<div id="zipcd"></div>
+<div id="zipcd" onclick="chgzip()"></div>
 <div id="tblhr"></div>
 <div id="sun"></div>
 <div id="moon"></div>
