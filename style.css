@@ -9,7 +9,7 @@ body { background-color: black !important;
 
 
 div {color: var(--txt9) ; 
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Segoe UI', Courier, monospace;
     font-size:large;}
 
 table {border-color: rgba(81, 107, 163, 0.562) !important;
@@ -22,7 +22,8 @@ table {border-color: rgba(81, 107, 163, 0.562) !important;
 
 img.weaicon { height: 32px !important; width: 32px !important; opacity: 70% !important;}
 
-.hl {color: rgb(62, 207, 140) !important;}
+.hl {color: rgb(55, 153, 107) !important;
+    }
 
 a    { color: rgba(113, 113, 207, 0.692) !important;}    
 
