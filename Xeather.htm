@@ -11,6 +11,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+  
+// a35e66501c88031db5054c862c6e5b15
+// da5f0d9ce3486ef93fd7ffb24235c9e3
+
 key = "da5f0d9ce3486ef93fd7ffb24235c9e3"
 var xhr = new XMLHttpRequest();
 var xhrz = new XMLHttpRequest();
@@ -117,8 +121,8 @@ function getWea(data) {
    document.getElementById("tblhr").innerHTML = "";
    document.getElementById("tblhr").innerHTML = tblhd + tblhr;   
    
-   document.getElementById("sunbox" ).innerHTML = '<img src="svg/Clear.svg" alt="Sun" class="weaicon"/>' + " " + srise  + "-" + sset;
-   document.getElementById("moonbox").innerHTML = '<img src="svg/ClearNt.svg" alt="Moon" class="weaicon"/>' + " " + mrise  + "-" + mset;
+   document.getElementById("sunbox" ).innerHTML = '<img src="svg/Clear.svg" alt="Sun" class="weaicon"/>' + " " + srise  + " - " + sset;
+   document.getElementById("moonbox").innerHTML = '<img src="svg/ClearNt.svg" alt="Moon" class="weaicon"/>' + " " + mrise  + " - " + mset;
  }
 
 // window.setInterval('fdrk()', 4000); 	
