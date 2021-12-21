@@ -2,8 +2,6 @@
 <html>
 <head>
 
-
-
 <link rel="stylesheet" href="style.css" />
 <script src="funcs.js"></script>
 <script src="fDate.js"></script>
@@ -60,7 +58,6 @@ function callwea() {
   xhr.send();
 }
 
-
 tblhd= '<table class="table" id="mytbl"><thead><tr>'
       + '<th onclick="fdrk()">Time</th>'
       + '<th>Temp</th>'
@@ -95,8 +92,17 @@ function getWea(data) {
             + "</tr>";
       }
  
+      for (let j = 1; j < 6; j++) {
+      var xd = new Date(data.daily[j].dt*1000);
+      dthr = date_format(xd, 'D');
+      tblhr += "<tr>" 
+            + "  <td id='dayrow'>" + dthr + "</td>"
+            + "  <td>" + parseInt(.5 + data.daily[j].temp.max)+ "-" +parseInt(.5 + data.daily[j].temp.min) + "°</td>"
+            + "  <td>" + data.daily[j].humidity + "%" + "</td>"
+            + "  <td>" + data.daily[j].weather[0].main + "</td>"
+            + "</tr>";
+      }
    tblhr += "</tbody></table>";
-
 
    dateVal = new Date(data.daily[0].sunrise *1000);
    srise = date_format(dateVal, 'g:ia');
@@ -144,7 +150,7 @@ function chgzip() {
 <div id="moon"></div>
 
 <a href="https://vxnj.github.io/CatFacts/">main<a/>
-<a href="https://api.openweathermap.org/data/2.5/onecall?lat=40.8&lon=-73.97&units=imperial&exclude=minutely&appid=3eaa5145be3fbca4b9a3f346b0f8a668"
+<a href="https://api.openweathermap.org/data/2.5/onecall?lat=40.8&lon=-73.97&units=imperial&exclude=minutely&appid=da5f0d9ce3486ef93fd7ffb24235c9e3"
 target="blank">json<a/>
 <a href="https://duckduckgo.com/?q=weather+upper+west+side%2C+Ny&t=ffsb&atb=v229-1&ia=weather" target="blank">ddg<a/>
 <a href="https://openweathermap.org/city/5128581">openweather<a/>
