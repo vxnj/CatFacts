@@ -5,11 +5,12 @@
 }
 
 body { background-color: black !important;
-    padding: 10px !important;}
+    padding: 10px !important;
+    line-height: 1.1 !important;}
 
 
 div {color: var(--txt9) ; 
-    font-family: 'Segoe UI', Courier, monospace;
+    font-family: 'Segoe UI', Courier, monospace; 
     font-size:large;}
 
 table {border-color: rgba(81, 107, 163, 0.562) !important;
